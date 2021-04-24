@@ -1,0 +1,34 @@
+{% extends 'home.html' %}
+
+    {% block title %}
+    <title>📖 Search</title>
+    {% endblock %}
+
+{% block body %}
+<h1><b>Showing results for <span style="color:red;">{{word}} </span> :</b></h1>
+<h2 style="color:blue;" class="my-4"><b>Meaning :</b></h2>
+<hr ng-if="title" class="section-title-hr ng-scope">
+
+{% for mean in meaning %}
+<h4> &#8594; {{mean}}</h4>
+{% endfor %}
+
+<h2 style="color:green;" class="my-4"><b>Synonyms :</b></h2>
+<hr ng-if="title" class="section-title-hr ng-scope">
+{% for syn in syn %}
+<h4>&bull; {{syn}}</h4>
+{% endfor %}
+
+
+<h2 style="color:red;" class="my-4"><b>Antonyms :</b></h2>
+<hr ng-if="title" class="section-title-hr ng-scope">
+ {% for ant in ant %}
+<h4>&bull; {{ant}}</h4>
+{% endfor %}
+
+
+
+
+
+{% endblock %}
+

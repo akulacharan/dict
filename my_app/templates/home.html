@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>📖 Home</title>
+    {% endblock %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .bg {
+  /* The image used */
+  background-image: url("https://thewallpaper.co/wp-content/uploads/2020/08/blue-sky-abstract-background-images-for-website-cool-colourful-apple-2560x1600-1.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+    </style>
+</head>
+<body class="bg">
+<div class="container my-4" >
+    <h1> <b style="color:#373450;" >A Simple Online Dictionary 📖</b></h1>
+
+<form method="post" action="{% url 'search' %}"  class="my-3">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input class="form-control" placeholder="search your word here..." name="search" required>
+        <div class="text-right">
+            <button class="btn btn-primary float-right my-2" type="submit" >Search</button>
+         </div>
+    </div>
+    </form>
+{% block body %}
+{% endblock %}
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+</html>
